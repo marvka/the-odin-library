@@ -1,3 +1,7 @@
 body {
   background: url(images/background.png);
 }
+
+h1 {
+  color: rgba(70, 70, 70, 0.9);
+}
