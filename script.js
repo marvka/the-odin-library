@@ -6,3 +6,7 @@ function Book(title, author, pageCount, haveRead) {
   this.pageCount = pageCount;
   this.haveRead = haveRead;
 }
+
+function addBookToLibrary(title, author, pageCount, haveRead) {
+  myLibrary.push(new Book(title, author, pageCount, haveRead));
+}
