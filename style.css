@@ -1,9 +1,12 @@
 body {
   background: url(images/background.png);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
-  color: rgba(70, 70, 70, 0.9);
+  color: rgba(70, 70, 70, 1);
+  font-weight: bold;
+  font-size: 3rem;
 }
 
 .horizontal-center {
