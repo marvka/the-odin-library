@@ -4,9 +4,8 @@ body {
 }
 
 h1 {
-  color: rgba(70, 70, 70, 1);
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 4em;
 }
 
 .horizontal-center {
