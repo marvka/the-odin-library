@@ -30,3 +30,18 @@ Book.prototype.createHTMLElement = function (key) {
 function addBookToLibrary(title, author, pageCount, haveRead) {
   myLibrary.push(new Book(title, author, pageCount, haveRead));
 }
+
+// Add books from library to library container
+myLibrary.forEach((book) => {
+  const libraryContainer = document.getElementById('library-container');
+  const bookContainer = document.createElement('div');
+  bookContainer.classList.add('book-container');
+
+  for (const key in book) {
+    if (book.hasOwnProperty(key)) {
+      bookContainer.appendChild(book.createHTMLElement(key));
+    }
+  }
+
+  libraryContainer.appendChild(bookContainer);
+});
