@@ -56,3 +56,10 @@ document
   .addEventListener('click', (event) => {
     document.getElementById('overlay').style.display = 'block';
   });
+
+// Bind Esc to get rid of overlay
+window.addEventListener('keydown', (e) => {
+  if (/(Escape)/.test(e.key)) {
+    document.getElementById('overlay').style.display = 'none';
+  }
+});
