@@ -42,3 +42,41 @@ strong {
 #new-book-button {
   height: 4em;
 }
+
+div#overlay {
+  position: fixed;
+  display: none;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+div#form {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 25rem;
+  height: 18rem;
+  padding: 2rem 2rem;
+  background-color: white;
+  border-radius: 0.4em;
+  font-size: 1.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+div#form input {
+  font-size: 1.2rem;
+}
+
+div#form > * {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
