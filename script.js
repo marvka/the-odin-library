@@ -49,3 +49,10 @@ function displayBooks() {
 }
 
 displayBooks();
+
+// "New Book" button functionality
+document
+  .getElementById('new-book-button')
+  .addEventListener('click', (event) => {
+    document.getElementById('overlay').style.display = 'block';
+  });
