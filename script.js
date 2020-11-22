@@ -33,8 +33,8 @@ function addBookToLibrary(title, author, pageCount, haveRead) {
 
 // Add books from library to library container
 function displayBooks() {
+  const libraryContainer = document.getElementById('library-container');
   myLibrary.forEach((book) => {
-    const libraryContainer = document.getElementById('library-container');
     const bookContainer = document.createElement('div');
     bookContainer.classList.add('book-container');
 
@@ -43,8 +43,6 @@ function displayBooks() {
         bookContainer.appendChild(book.createHTMLElement(key));
       }
     }
-
-    bookContainer.appendChild(book.createHTMLElement());
 
     libraryContainer.appendChild(bookContainer);
   });
