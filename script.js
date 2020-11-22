@@ -68,9 +68,12 @@ function initializeEventListeners() {
   // "Cancel" button
   document.getElementById('cancel').addEventListener('click', hideOverlay);
 
-    document.getElementById('overlay').style.display = 'none';
-  }
-});
+  // Esc key
+  window.addEventListener('keydown', (e) => {
+    if (/(Escape)/.test(e.key)) {
+      hideOverlay();
+    }
+  });
 }
 
 initializeEventListeners();
