@@ -38,3 +38,7 @@ strong {
   border: 0.2em solid black;
   border-radius: 0.4em;
 }
+
+#new-book-button {
+  height: 4em;
+}
