@@ -12,3 +12,7 @@ h1 {
 .horizontal-center {
   text-align: center;
 }
+
+#book-container {
+  margin: 0 2%;
+}
