@@ -48,18 +48,30 @@ function displayBooks() {
   });
 }
 
-displayBooks();
+function showOverlay() {
+  document.getElementById('overlay').style.display = 'block';
+}
 
-// "New Book" button functionality
-document
-  .getElementById('new-book-button')
+function hideOverlay() {
+  document.getElementById('overlay').style.display = 'none';
+}
   .addEventListener('click', (event) => {
     document.getElementById('overlay').style.display = 'block';
   });
 
-// Bind Esc to get rid of overlay
-window.addEventListener('keydown', (e) => {
-  if (/(Escape)/.test(e.key)) {
+function initializeEventListeners() {
+  // "New Book" button
+  document
+    .getElementById('new-book-button')
+    .addEventListener('click', showOverlay);
+
+  // "Cancel" button
+  document.getElementById('cancel').addEventListener('click', hideOverlay);
+
     document.getElementById('overlay').style.display = 'none';
   }
 });
+}
+
+initializeEventListeners();
+displayBooks();
