@@ -32,16 +32,22 @@ function addBookToLibrary(title, author, pageCount, haveRead) {
 }
 
 // Add books from library to library container
-myLibrary.forEach((book) => {
-  const libraryContainer = document.getElementById('library-container');
-  const bookContainer = document.createElement('div');
-  bookContainer.classList.add('book-container');
+function displayBooks() {
+  myLibrary.forEach((book) => {
+    const libraryContainer = document.getElementById('library-container');
+    const bookContainer = document.createElement('div');
+    bookContainer.classList.add('book-container');
 
-  for (const key in book) {
-    if (book.hasOwnProperty(key)) {
-      bookContainer.appendChild(book.createHTMLElement(key));
+    for (const key in book) {
+      if (book.hasOwnProperty(key)) {
+        bookContainer.appendChild(book.createHTMLElement(key));
+      }
     }
-  }
 
-  libraryContainer.appendChild(bookContainer);
-});
+    bookContainer.appendChild(book.createHTMLElement());
+
+    libraryContainer.appendChild(bookContainer);
+  });
+}
+
+displayBooks();
