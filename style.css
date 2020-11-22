@@ -1,6 +1,7 @@
 body {
   background: url(images/background.png);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 0 1em;
 }
 
 h1 {
@@ -8,10 +9,32 @@ h1 {
   font-size: 4em;
 }
 
+strong {
+  font-weight: bolder;
+}
+
 .horizontal-center {
   text-align: center;
 }
 
 #library-container {
-  margin: 0 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
+.book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  width: 20rem;
+  height: 15rem;
+  margin: 0.5em;
+  padding: 0.5em;
+  font-size: 1.5em;
+  background-color: rgba(248, 241, 231, 1);
+  border: 0.2em solid black;
+  border-radius: 0.4em;
 }
