@@ -21,7 +21,7 @@ Book.prototype.createHTMLElement = function (key) {
       break;
     case 'haveRead':
       const read = this.haveRead ? 'Read' : 'Unread';
-      element.innerHTML = `<button id="read-button">${read}</button>`;
+      element.innerHTML = `<button class="read-button">${read}</button>`;
       break;
   }
   return element;
