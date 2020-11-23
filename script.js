@@ -71,6 +71,9 @@ function initializeEventListeners() {
       hideOverlay();
     }
   });
+
+  // "Add Book" button
+  document.getElementById('add-book').addEventListener('click', readInput);
 }
 
 function validateInput(title, author, pageCount) {
