@@ -27,6 +27,14 @@ Book.prototype.createHTMLElement = function (key) {
   return element;
 };
 
+Book.prototype.toggleReadStatus = function () {
+  if (this.haveRead) {
+    this.haveRead = false;
+  } else {
+    this.haveRead = true;
+  }
+};
+
 function addBookToLibrary(title, author, pageCount, haveRead) {
   const newBook = new Book(title, author, pageCount, haveRead);
   myLibrary.push(newBook);
