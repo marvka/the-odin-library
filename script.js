@@ -64,7 +64,20 @@ function hideOverlay() {
   document.getElementById('overlay').style.display = 'none';
 }
 
+function toggleReadStatusButton(event) {
+  const bookContainer = this.parentNode.parentNode;
+  myLibrary[bookContainer.dataset.index].toggleReadStatus();
+  this.textContent = myLibrary[bookContainer.dataset.index].haveRead
+    ? 'Read'
+    : 'Unread';
+}
+
 function initializeEventListeners() {
+  // Toggle read status button
+  [...document.getElementsByClassName('read-button')].forEach((button) => {
+    button.addEventListener('click', toggleReadStatusButton);
+  });
+
   // "New Book" button
   document
     .getElementById('new-book-button')
