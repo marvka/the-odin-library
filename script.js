@@ -53,6 +53,11 @@ function displayNewBook(book) {
     }
   }
 
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('remove-book');
+  removeButton.textContent = 'Remove';
+  bookContainer.appendChild(removeButton);
+
   libraryContainer.appendChild(bookContainer);
 }
 
@@ -73,10 +78,22 @@ function toggleReadStatusButton(event) {
     : 'Unread';
 }
 
+function removeBook(event) {
+  const bookContainer = event.target.parentNode;
+  const index = bookContainer.dataset.index;
+  delete myLibrary[index];
+  bookContainer.remove();
+}
+
 function initializeEventListeners() {
   // Toggle read status button
   [...document.getElementsByClassName('read-button')].forEach((button) => {
     button.addEventListener('click', toggleReadStatusButton);
+  });
+
+  // "Remove" button
+  [...document.getElementsByClassName('remove-book')].forEach((button) => {
+    button.addEventListener('click', removeBook);
   });
 
   // "New Book" button
