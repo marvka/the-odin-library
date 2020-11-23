@@ -65,9 +65,10 @@ function hideOverlay() {
 }
 
 function toggleReadStatusButton(event) {
-  const bookContainer = this.parentNode.parentNode;
+  const bookContainer = event.target.parentNode.parentNode;
+  console.log(bookContainer);
   myLibrary[bookContainer.dataset.index].toggleReadStatus();
-  this.textContent = myLibrary[bookContainer.dataset.index].haveRead
+  event.target.textContent = myLibrary[bookContainer.dataset.index].haveRead
     ? 'Read'
     : 'Unread';
 }
