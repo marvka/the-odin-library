@@ -76,5 +76,22 @@ function initializeEventListeners() {
   });
 }
 
+function validateInput(title, author, pageCount) {
+  const errorElement = document.getElementById('input-error');
+  if (!title) {
+    errorElement.textContent = 'Please enter a title!';
+    errorElement.style.display = 'block';
+    return false;
+  } else if (!author) {
+    errorElement.textContent = 'Please enter an author!';
+    errorElement.style.display = 'block';
+    return false;
+  } else if (!pageCount) {
+    errorElement.textContent = 'Please enter the number of pages!';
+    errorElement.style.display = 'block';
+    return false;
+  }
+  return true;
+}
 initializeEventListeners();
 displayBooks();
