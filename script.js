@@ -100,5 +100,19 @@ function resetForm() {
   document.getElementById('input-error').style.display = 'none';
 }
 
+function readInput() {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pageCount = parseInt(document.getElementById('page-count').value);
+  const haveRead =
+    document.querySelector('input[name="read-unread"]:checked').value ===
+    'true';
+  console.log(haveRead);
+
+  if (validateInput(title, author, pageCount, haveRead)) {
+    addBookToLibrary(title, author, pageCount, haveRead);
+    resetForm();
+  }
+}
+
 initializeEventListeners();
-displayBooks();
