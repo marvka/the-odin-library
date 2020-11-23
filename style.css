@@ -40,7 +40,9 @@ strong {
 }
 
 #new-book-button {
-  height: 4em;
+  position: absolute;
+  bottom: 2rem;
+  height: 4rem;
 }
 
 div#overlay {
