@@ -55,9 +55,6 @@ function showOverlay() {
 function hideOverlay() {
   document.getElementById('overlay').style.display = 'none';
 }
-  .addEventListener('click', (event) => {
-    document.getElementById('overlay').style.display = 'block';
-  });
 
 function initializeEventListeners() {
   // "New Book" button
