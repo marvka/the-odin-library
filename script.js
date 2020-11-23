@@ -19,10 +19,6 @@ Book.prototype.createHTMLElement = function (key) {
     case 'pageCount':
       element.innerHTML = `<p>${this.pageCount} Pages</p>`;
       break;
-    case 'haveRead':
-      const read = this.haveRead ? 'Read' : 'Unread';
-      element.innerHTML = `<button class="read-button">${read}</button>`;
-      break;
   }
   return element;
 };
@@ -49,7 +45,18 @@ function displayNewBook(book) {
 
   for (const key in book) {
     if (book.hasOwnProperty(key)) {
-      bookContainer.appendChild(book.createHTMLElement(key));
+      if (key === 'haveRead') {
+        const read = book[key] ? 'Read' : 'Unread';
+
+        const readButton = document.createElement('button');
+        readButton.classList.add('read-button');
+        readButton.textContent = read;
+        readButton.addEventListener('click', toggleReadStatusButton);
+
+        bookContainer.appendChild(readButton);
+      } else {
+        bookContainer.appendChild(book.createHTMLElement(key));
+      }
     }
   }
 
@@ -71,8 +78,7 @@ function hideOverlay() {
 }
 
 function toggleReadStatusButton(event) {
-  const bookContainer = event.target.parentNode.parentNode;
-  console.log(bookContainer);
+  const bookContainer = event.target.parentNode;
   myLibrary[bookContainer.dataset.index].toggleReadStatus();
   event.target.textContent = myLibrary[bookContainer.dataset.index].haveRead
     ? 'Read'
@@ -87,11 +93,6 @@ function removeBook(event) {
 }
 
 function initializeEventListeners() {
-  // Toggle read status button
-  [...document.getElementsByClassName('read-button')].forEach((button) => {
-    button.addEventListener('click', toggleReadStatusButton);
-  });
-
   // "New Book" button
   document
     .getElementById('new-book-button')
