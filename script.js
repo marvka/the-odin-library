@@ -28,24 +28,24 @@ Book.prototype.createHTMLElement = function (key) {
 };
 
 function addBookToLibrary(title, author, pageCount, haveRead) {
-  myLibrary.push(new Book(title, author, pageCount, haveRead));
+  const newBook = new Book(title, author, pageCount, haveRead);
+  myLibrary.push(newBook);
+  displayNewBook(newBook);
 }
 
-// Add books from library to library container
-function displayBooks() {
+function displayNewBook(book) {
   const libraryContainer = document.getElementById('library-container');
-  myLibrary.forEach((book) => {
-    const bookContainer = document.createElement('div');
-    bookContainer.classList.add('book-container');
+  const bookContainer = document.createElement('div');
+  bookContainer.classList.add('book-container');
+  bookContainer.dataset.index = myLibrary.indexOf(book);
 
-    for (const key in book) {
-      if (book.hasOwnProperty(key)) {
-        bookContainer.appendChild(book.createHTMLElement(key));
-      }
+  for (const key in book) {
+    if (book.hasOwnProperty(key)) {
+      bookContainer.appendChild(book.createHTMLElement(key));
     }
+  }
 
-    libraryContainer.appendChild(bookContainer);
-  });
+  libraryContainer.appendChild(bookContainer);
 }
 
 function showOverlay() {
