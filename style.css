@@ -9,6 +9,20 @@ h1 {
   font-size: 4em;
 }
 
+main {
+  margin-bottom: 3.7rem;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 0.6rem 0;
+  background: url(images/background.png);
+  width: 100%;
+  text-align: center;
+}
+
 strong {
   font-weight: bolder;
 }
@@ -44,10 +58,8 @@ strong {
   border-radius: 0.4em;
 }
 
-#new-book-button {
-  position: absolute;
-  bottom: 2rem;
-  height: 4rem;
+button#new-book-button {
+  height: 2.5rem;
 }
 
 div#overlay {
