@@ -90,5 +90,15 @@ function validateInput(title, author, pageCount) {
   }
   return true;
 }
+
+function resetForm() {
+  document.getElementById('title').value = '';
+  document.getElementById('author').value = '';
+  document.getElementById('page-count').value = '';
+  document.getElementById('unread').checked = true;
+  document.getElementById('input-error').textContent = '';
+  document.getElementById('input-error').style.display = 'none';
+}
+
 initializeEventListeners();
 displayBooks();
