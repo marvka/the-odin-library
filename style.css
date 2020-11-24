@@ -89,6 +89,10 @@ div#form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation-name: popup;
+  animation-timing-function: ease-in;
+  transform-origin: top left;
+  animation-duration: 0.25s;
 }
 
 div#form input {
@@ -103,4 +107,13 @@ div#form > * {
 #input-error {
   display: none;
   color: red;
+}
+
+@keyframes popup {
+  50% {
+    transform: scale(1.05) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
 }
