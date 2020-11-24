@@ -9,6 +9,10 @@ h1 {
   font-size: 4em;
 }
 
+button:hover {
+  transform: scale(1.15);
+}
+
 main {
   margin-bottom: 3.7rem;
 }
