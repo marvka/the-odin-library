@@ -13,7 +13,7 @@
     </header>
 
     <main>
-      <div id="library-container"></div>
+      <div id="library"></div>
     </main>
 
     <footer>
@@ -31,18 +31,23 @@
           placeholder="Pages"
         />
         <div id="read-radio-button-wrapper">
-          <label for="read">
+          <label for="read-radio">
             Read
-            <input type="radio" name="read-unread" id="read" value="true" />
+            <input
+              type="radio"
+              name="read-unread"
+              id="read-radio"
+              value="Read"
+            />
           </label>
-          <label for="unread">
+          <label for="unread-radio">
             Unread
             <input
               type="radio"
               checked
               name="read-unread"
-              id="unread"
-              value="false"
+              id="unread-radio"
+              value="Unread"
           /></label>
         </div>
         <p id="input-error"></p>

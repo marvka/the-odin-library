@@ -41,7 +41,7 @@ strong {
   justify-content: center;
 }
 
-#library-container {
+#library {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
